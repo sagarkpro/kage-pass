@@ -9,7 +9,7 @@ import com.sagar.kagepass.jwt.JwtUtils;
 import com.sagar.kagepass.services.UserService;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 
 import java.security.SignatureException;
 import java.util.Map;
@@ -44,7 +44,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginDto loginDto) {
+    public ResponseEntity<?> login(@Valid @RequestBody LoginDto loginDto) {
         var token = userService.login(loginDto);
         if(token.isPresent()){
             return ResponseEntity.ok().body(Map.of("token", token.get()));
