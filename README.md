@@ -30,7 +30,7 @@ It operates silently in the background, yet its protection is unbreakable – a 
 
 ## 🏯 Tech Stack
 
-- **Java 23**
+- **Java 24**
 - **Spring Boot 3.3**
 - **Spring Security**
 - **JWT (JSON Web Token)**
